@@ -110,7 +110,13 @@ export default function HomePage() {
               <li>AI with human control</li>
             </ul>
           </div>
-          <SystemPanel />
+          <div
+            className="system-motion-wrap"
+            data-motion-reveal
+            data-motion-from="right"
+          >
+            <SystemPanel />
+          </div>
         </div>
       </section>
 
@@ -123,7 +129,7 @@ export default function HomePage() {
       </div>
 
       <section className="section">
-        <div className="container answer-panel">
+        <div className="container answer-panel" data-motion-reveal>
           <div>
             <span className="eyebrow">A direct answer</span>
             <h2>What does GRWSURE INFOTECH build?</h2>
@@ -197,7 +203,12 @@ export default function HomePage() {
           />
           <div className="process-grid">
             {process.map((item, index) => (
-              <article className="process-card" key={item.title}>
+              <article
+                className="process-card"
+                key={item.title}
+                data-motion-reveal
+                data-motion-delay={index * 0.05}
+              >
                 <span>0{index + 1}</span>
                 <h3>{item.title}</h3>
                 <p>{item.body}</p>
@@ -215,7 +226,12 @@ export default function HomePage() {
           <SectionHeading eyebrow="Why GRWSURE" title="Four principles that shape every engagement." />
           <div className="principle-grid">
             {principles.map((principle, index) => (
-              <article className="principle-card" key={principle.title}>
+              <article
+                className="principle-card"
+                key={principle.title}
+                data-motion-reveal
+                data-motion-delay={index * 0.05}
+              >
                 <span>0{index + 1}</span>
                 <h3>{principle.title}</h3>
                 <p>{principle.body}</p>

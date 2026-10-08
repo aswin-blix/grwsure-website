@@ -67,7 +67,15 @@ export function PageHero({
           <p className="page-hero-intro">{intro}</p>
           {children && <div className="hero-actions">{children}</div>}
         </div>
-        {aside && <div className="page-hero-aside">{aside}</div>}
+        {aside && (
+          <div
+            className="page-hero-aside"
+            data-motion-reveal
+            data-motion-from="right"
+          >
+            {aside}
+          </div>
+        )}
       </div>
     </section>
   );
@@ -85,7 +93,10 @@ export function SectionHeading({
   align?: "left" | "center";
 }) {
   return (
-    <div className={`section-heading section-heading-${align}`}>
+    <div
+      className={`section-heading section-heading-${align}`}
+      data-motion-reveal
+    >
       <span className="eyebrow">{eyebrow}</span>
       <h2>{title}</h2>
       {description && <p>{description}</p>}
@@ -111,7 +122,11 @@ export function FaqList({ items }: { items: readonly FAQ[] | FAQ[] }) {
 
 export function ServiceCard({ service }: { service: Service }) {
   return (
-    <article className="service-card">
+    <article
+      className="service-card"
+      data-motion-reveal
+      data-motion-delay={((Number.parseInt(service.index, 10) - 1) % 2) * 0.06}
+    >
       <div className="card-topline">
         <span>{service.index}</span>
         <span>{service.kicker}</span>
@@ -130,7 +145,11 @@ export function ServiceCard({ service }: { service: Service }) {
 
 export function IndustryCard({ industry, index }: { industry: Industry; index: number }) {
   return (
-    <article className="industry-card">
+    <article
+      className="industry-card"
+      data-motion-reveal
+      data-motion-delay={(index % 2) * 0.06}
+    >
       <span className="industry-number">0{index + 1}</span>
       <div>
         <h3>{industry.shortTitle}</h3>
@@ -155,7 +174,7 @@ export function CtaBand({
   return (
     <section className="cta-section">
       <div className="container">
-        <div className="cta-band">
+        <div className="cta-band" data-motion-reveal data-motion-from="scale">
           <div>
             <span className="eyebrow eyebrow-light">{eyebrow}</span>
             <h2>{title}</h2>
@@ -173,7 +192,7 @@ export function CtaBand({
 
 export function BlueprintCard({ blueprint }: { blueprint: (typeof import("@/lib/site-data").blueprints)[number] }) {
   return (
-    <article className="blueprint-card">
+    <article className="blueprint-card" data-motion-reveal>
       <div className="blueprint-card-head">
         <span>{blueprint.sector}</span>
         <span>Solution blueprint</span>

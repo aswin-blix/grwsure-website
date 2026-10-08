@@ -14,10 +14,18 @@ Open `http://localhost:3000`.
 ## Validate
 
 ```bash
+npm test
 npm run typecheck
 npm run lint
 npm run build
 ```
+
+## Theme and motion
+
+- The header includes an accessible light/dark mode toggle. The first visit follows the operating-system preference, and an explicit choice is saved locally under `grwsure-theme`.
+- A small pre-hydration script applies the resolved theme before the page paints, avoiding a light-theme flash for dark-mode visitors.
+- Viewport reveals use [Motion](https://motion.dev/) through its lightweight `motion/mini` entry point. Animations are limited to compositor-friendly opacity and transform changes, run only once, and do not delay the primary hero copy.
+- Visitors who enable reduced motion get fully visible content with JavaScript-driven reveals disabled.
 
 ## Content and trust boundaries
 

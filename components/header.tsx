@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Brand } from "@/components/brand";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const navItems = [
   { href: "/services", label: "Services" },
@@ -27,9 +28,9 @@ export function Header() {
           type="button"
           aria-expanded={open}
           aria-controls="primary-navigation"
+          aria-label={open ? "Close navigation" : "Open navigation"}
           onClick={() => setOpen((value) => !value)}
         >
-          <span className="sr-only">Toggle navigation</span>
           <span />
           <span />
         </button>
@@ -50,6 +51,7 @@ export function Header() {
             Start a project
           </Link>
         </nav>
+        <ThemeToggle />
       </div>
     </header>
   );

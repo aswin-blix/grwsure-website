@@ -38,7 +38,13 @@ export default function ProcessPage() {
           <SectionHeading eyebrow="Six stages" title="From operational reality to a dependable release." description="The timing and depth vary by project. The responsibility to understand, test, document, and hand over does not." />
           <div className="timeline">
             {stages.map((stage, index) => (
-              <article className="timeline-step" id={stage.title.toLowerCase()} key={stage.title}>
+              <article
+                className="timeline-step"
+                id={stage.title.toLowerCase()}
+                key={stage.title}
+                data-motion-reveal
+                data-motion-delay={index * 0.04}
+              >
                 <span className="timeline-number">0{index + 1}</span>
                 <h2>{stage.title}</h2>
                 <div><p>{stage.summary}</p><div className="stack-row"><span className="stack-tag">{stage.outputs}</span></div></div>

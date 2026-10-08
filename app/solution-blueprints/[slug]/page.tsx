@@ -64,7 +64,7 @@ export default async function BlueprintDetailPage({ params }: { params: Promise<
         <div className="container">
           <SectionHeading eyebrow="Reference flow" title="A connected path through the work." description="Each step represents a responsibility or system boundary to validate during discovery." />
           <div className="architecture-flow">
-            {blueprint.flow.map((step, index) => <div className="architecture-node" key={step}><span>0{index + 1}</span><strong>{step}</strong></div>)}
+            {blueprint.flow.map((step, index) => <div className="architecture-node" key={step} data-motion-reveal data-motion-delay={index * 0.04}><span>0{index + 1}</span><strong>{step}</strong></div>)}
           </div>
         </div>
       </section>
