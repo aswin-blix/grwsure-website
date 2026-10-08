@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { StoryIllustration } from "@/components/story-illustration";
 import { ArrowIcon, Breadcrumbs, CtaBand, JsonLd, PageHero } from "@/components/ui";
 import { insightBySlug, insights, site } from "@/lib/site-data";
 import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
@@ -42,6 +43,9 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
       <article className="section section-white">
         <div className="container article-shell">
           <div className="article-body">
+            <div className="article-illustration" data-motion-from="scale" data-motion-reveal>
+              <StoryIllustration name={insight.illustration} variant="article" />
+            </div>
             <p>{insight.lead}</p>
             {insight.sections.map((section) => <section key={section.heading}><h2>{section.heading}</h2>{section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</section>)}
             <p><em>This guide provides general product and engineering information. It is not legal, compliance, security, or financial advice.</em></p>

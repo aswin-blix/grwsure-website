@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { StoryIllustration } from "@/components/story-illustration";
 import {
   ArrowIcon,
   BlueprintCard,
@@ -25,29 +26,34 @@ const principles = [
   { title: "Built for handover", body: "Architecture, access, documentation, and support responsibilities are treated as part of the product." },
 ];
 
-function SystemPanel() {
+const heroStorySteps = ["Understand", "Build", "Improve"];
+
+function HomeHeroStory() {
   return (
-    <div className="system-shell" aria-label="Illustrative connected business system">
-      <div className="system-window">
-        <div className="system-bar">
-          <div className="window-dots"><i /><i /><i /></div>
-          <span>GRWSURE / SYSTEM MAP</span>
-          <span>READY</span>
+    <figure
+      aria-label="A team shaping business needs into useful software and continuous improvement"
+      className="home-story"
+      role="img"
+    >
+      <div aria-hidden="true" className="home-story-canvas">
+        <div className="home-story-art">
+          <StoryIllustration name="building-websites" preload variant="hero" />
         </div>
-        <div className="system-content">
-          <div className="system-metrics">
-            <div className="system-metric"><span>Workflow status</span><strong>Clear</strong></div>
-            <div className="system-metric"><span>Next action</span><strong>Assigned</strong></div>
-          </div>
-          <div className="system-flow">
-            <div className="flow-node"><strong>Customer</strong><small>Web · Mobile</small></div>
-            <div className="flow-node"><strong>Business OS</strong><small>Rules · Data · AI</small></div>
-            <div className="flow-node"><strong>Team</strong><small>Action · Insight</small></div>
-          </div>
-          <p className="system-caption">Illustrative interface — architecture is tailored to each project.</p>
+        <div className="home-story-steps">
+          {heroStorySteps.map((step, index) => (
+            <span
+              className="home-story-step"
+              data-motion-delay={index * 0.06}
+              data-motion-reveal
+              key={step}
+            >
+              <i>0{index + 1}</i>
+              <strong>{step}</strong>
+            </span>
+          ))}
         </div>
       </div>
-    </div>
+    </figure>
   );
 }
 
@@ -110,13 +116,7 @@ export default function HomePage() {
               <li>AI with human control</li>
             </ul>
           </div>
-          <div
-            className="system-motion-wrap"
-            data-motion-reveal
-            data-motion-from="right"
-          >
-            <SystemPanel />
-          </div>
+          <HomeHeroStory />
         </div>
       </section>
 
@@ -130,9 +130,19 @@ export default function HomePage() {
 
       <section className="section">
         <div className="container answer-panel" data-motion-reveal>
-          <div>
+          <div className="answer-intro">
             <span className="eyebrow">A direct answer</span>
             <h2>What does GRWSURE INFOTECH build?</h2>
+            <figure
+              aria-label="A team organizing shared ideas into a clear delivery plan"
+              className="answer-story"
+              role="img"
+            >
+              <div aria-hidden="true" className="answer-story-art">
+                <StoryIllustration name="sharing-ideas" variant="section" />
+              </div>
+              <figcaption aria-hidden="true">One shared picture of the work</figcaption>
+            </figure>
           </div>
           <div className="answer-copy">
             <p>

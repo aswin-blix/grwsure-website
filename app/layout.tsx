@@ -64,6 +64,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
       <head>
         <script
           id="theme-bootstrap"
+          suppressHydrationWarning
           dangerouslySetInnerHTML={{ __html: getThemeBootstrapScript() }}
         />
       </head>

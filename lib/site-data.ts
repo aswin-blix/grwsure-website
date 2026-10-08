@@ -559,6 +559,7 @@ export const insights = [
     category: "Software strategy",
     readTime: "6 min read",
     published: "2026-10-08",
+    illustration: "business-decisions",
     lead: "The right answer is rarely “custom is better” or “SaaS is cheaper.” The useful question is which parts of your operation are standard, which create strategic value, and how much friction your team absorbs to bridge the gap.",
     takeaways: ["Use SaaS for mature, standard workflows when configuration is enough.", "Consider custom software when the workflow, data, permissions, or customer experience is strategically distinct.", "Compare total operating friction—not only subscription fees and initial build cost."],
     sections: [
@@ -574,6 +575,7 @@ export const insights = [
     category: "Applied AI",
     readTime: "5 min read",
     published: "2026-10-08",
+    illustration: "chat-with-ai",
     lead: "A chatbot answers in a conversation. An AI agent may also retrieve private knowledge, call tools, update systems, or move a workflow forward. That ability to act changes the design and risk model.",
     takeaways: ["Define the job and boundaries before choosing a model.", "Separate read access from action permissions.", "Evaluate real tasks, failure modes, cost, and escalation—not just fluent responses."],
     sections: [
@@ -589,6 +591,7 @@ export const insights = [
     category: "Automation",
     readTime: "7 min read",
     published: "2026-10-08",
+    illustration: "creation-process",
     lead: "Good automation makes a process more reliable and visible. It does not simply hide a fragile set of steps behind a script. A strong first project is frequent, rules-based, measurable, and safe to recover when something fails.",
     takeaways: ["Choose a bounded workflow with clear ownership.", "Model exceptions before the happy path is automated.", "Add logs, alerts, retry rules, and manual recovery from the first release."],
     sections: [

@@ -23,9 +23,16 @@ npm run build
 ## Theme and motion
 
 - The header includes an accessible light/dark mode toggle. The first visit follows the operating-system preference, and an explicit choice is saved locally under `grwsure-theme`.
-- A small pre-hydration script applies the resolved theme before the page paints, avoiding a light-theme flash for dark-mode visitors.
+- A small pre-hydration script applies the resolved theme before the page paints, avoiding a light-theme flash for dark-mode visitors. Hydration suppression is scoped to the root element and that script, so the intentional theme change and an extension-mutated bootstrap node do not raise false application errors while mismatches elsewhere remain visible.
 - Viewport reveals use [Motion](https://motion.dev/) through its lightweight `motion/mini` entry point. Animations are limited to compositor-friendly opacity and transform changes, run only once, and do not delay the primary hero copy.
 - Visitors who enable reduced motion get fully visible content with JavaScript-driven reveals disabled.
+
+## Illustrations
+
+- The homepage hero and direct-answer section use bright, story-led SVG scenes; the Insights listing and article pages reuse three supporting editorial illustrations.
+- All five SVGs are self-hosted, individually capped below 25 KB, and rendered on light illustration canvases in both themes.
+- Story steps and cards reveal once on entry with a very small pointer-hover lift; no continuous animation or extra client-side animation code is used.
+- Asset sources, license terms, integrity hashes, accessibility choices, and security checks are recorded in [`docs/illustrations.md`](docs/illustrations.md).
 
 ## Content and trust boundaries
 

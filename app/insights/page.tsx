@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { StoryIllustration } from "@/components/story-illustration";
 import { ArrowIcon, CtaBand, JsonLd, PageHero } from "@/components/ui";
 import { insights, site } from "@/lib/site-data";
 import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
@@ -26,11 +27,16 @@ export default function InsightsPage() {
       </PageHero>
       <section className="section">
         <div className="container insight-grid">
-          {insights.map((item) => (
-            <article className="insight-card" key={item.slug}>
-              <div className="insight-meta"><span>{item.category}</span><span>{item.readTime}</span></div>
-              <h2>{item.title}</h2><p>{item.description}</p>
-              <Link className="text-link" href={`/insights/${item.slug}`}>Read the guide <ArrowIcon /></Link>
+          {insights.map((item, index) => (
+            <article className="insight-card" data-motion-delay={index * 0.07} data-motion-reveal key={item.slug}>
+              <div className="insight-card-media">
+                <StoryIllustration name={item.illustration} />
+              </div>
+              <div className="insight-card-content">
+                <div className="insight-meta"><span>{item.category}</span><span>{item.readTime}</span></div>
+                <h2>{item.title}</h2><p>{item.description}</p>
+                <Link className="text-link" href={`/insights/${item.slug}`}>Read the guide <ArrowIcon /></Link>
+              </div>
             </article>
           ))}
         </div>
