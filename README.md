@@ -39,8 +39,14 @@ npm run build
 
 - Unique route metadata, canonical URLs, Open Graph/Twitter image, semantic headings, and server-rendered content.
 - Organization, WebSite, Service, FAQPage, BreadcrumbList, HowTo, CollectionPage, and TechArticle structured data where the visible page supports it.
-- `robots.txt`, `sitemap.xml`, web manifest, 404 page, and a factual `llms.txt` discovery aid.
+- `robots.txt`, a user-facing `/sitemap`, `sitemap.xml`, web manifest, 404 page, and a factual `llms.txt` discovery aid.
 - Answer-first copy, visible FAQs that match schema, descriptive internal links, industry topic clusters, and concise solution definitions.
+
+## GitHub Pages deployment
+
+- `.github/workflows/nextjs.yml` builds and uploads the generated `out/` directory whenever `main` is pushed.
+- GitHub's Pages setup injects the static-export and repository base-path settings. Generated metadata routes are explicitly marked static so they do not require a Next.js server at runtime.
+- Canonical, robots, sitemap, and structured-data URLs use `site.url`; confirm the custom domain before treating a Pages deployment as production.
 
 ## Before production deployment
 

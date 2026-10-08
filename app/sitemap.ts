@@ -1,9 +1,26 @@
 import type { MetadataRoute } from "next";
 import { blueprints, industries, insights, services, site } from "@/lib/site-data";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date("2026-10-08T00:00:00+05:30");
-  const staticRoutes = ["", "/solutions", "/services", "/industries", "/solution-blueprints", "/process", "/about", "/team", "/insights", "/faq", "/contact", "/privacy", "/terms"];
+  const staticRoutes = [
+    "",
+    "/solutions",
+    "/services",
+    "/industries",
+    "/solution-blueprints",
+    "/process",
+    "/about",
+    "/team",
+    "/insights",
+    "/faq",
+    "/contact",
+    "/sitemap",
+    "/privacy",
+    "/terms",
+  ];
   const routes = [
     ...staticRoutes,
     ...services.map((item) => `/services/${item.slug}`),

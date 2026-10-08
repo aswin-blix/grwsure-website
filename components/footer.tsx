@@ -59,7 +59,7 @@ export function Footer() {
         <div>
           <Link href="/privacy">Privacy</Link>
           <Link href="/terms">Terms</Link>
-          <Link href="/sitemap.xml">Sitemap</Link>
+          <Link href="/sitemap">Sitemap</Link>
         </div>
       </div>
     </footer>
